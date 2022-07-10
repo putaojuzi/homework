@@ -1,0 +1,15 @@
+<div id="search-component">
+    <br><hr><br>
+    <label for="search-box">Hero Search</label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+    <!-- 保存搜索的返回值 -->
+    <ul class="search-result">
+        <li *ngFor="let hero of heroes$ | async">
+            <a routerLink="/detail/{{hero.id}}">
+                {{hero.name}}
+            </a>
+        </li>
+    </ul>
+    <br><hr><br>
+</div>

@@ -1,0 +1,50 @@
+<p>
+    <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+            <!-- <a routerLink="/heroes" class=''>Heroes</a>
+            <a routerLink="/dashboard" class=''>Dashboard</a> -->
+        <button mat-menu-item routerLink="/heroes">Heroes</button>
+        <button mat-menu-item routerLink="/dashboard">Dashboard</button>
+        </mat-menu>
+
+        <span style="margin-left: 2rem;">{{title | uppercase}}</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon" (click)="toReport()" aria-label="Example icon-button with text icon">
+            <span style="font-size: 1.3rem;">课程结业报告</span>
+        </button>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>share</mat-icon>
+        </button>
+    </mat-toolbar>
+</p>
+
+<!-- <h1>{{title}}</h1> -->
+<!-- 指定构件 -->
+<!-- <app-heroes></app-heroes> -->
+
+
+<!-- 由主页显示，转到左上角菜单显示 -->
+<!-- <nav>
+    <a routerLink="/heroes" class=''>Heroes</a>
+    <a routerLink="/dashboard" class=''>Dashboard</a>
+</nav> -->
+
+<app-hero-search *ngIf="flag"></app-hero-search>
+
+<nav>
+    <li>
+    <!-- <button mat-raised-button (click)="openDialog()">Pick one</button> -->
+  </li>
+</nav>
+
+<!-- 添加路由出口 -->
+<router-outlet></router-outlet>
+<app-messages></app-messages>
+

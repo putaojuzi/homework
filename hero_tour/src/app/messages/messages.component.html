@@ -1,0 +1,13 @@
+<br><br><br>
+<div *ngIf="messageService.messages.length">
+    <hr><br>
+
+    <h2>Messages</h2>
+    <button class="clear" (click)="messageService.clear()">Clear messages</button>
+    
+    <!-- 遍历消息队列 -->
+    <div *ngFor="let message of messageService.messages">{{message}}</div>
+
+    <br><hr>
+</div>
+
